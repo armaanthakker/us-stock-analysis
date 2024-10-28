@@ -1,5 +1,9 @@
 import finnhub
+import yfinance as yf
 import pandas as pd
+import numpy as np
+import time
+import logging
 
 # Initialize client
 finnhub_client = finnhub.Client(api_key="cse3n61r01qs1ihofdr0cse3n61r01qs1ihofdrg")
@@ -8,15 +12,6 @@ finnhub_client = finnhub.Client(api_key="cse3n61r01qs1ihofdr0cse3n61r01qs1ihofdr
 symbols = finnhub_client.stock_symbols('US')
 pd.DataFrame(symbols).to_csv('us_stock_symbols.csv', index=False)
 
-
-
-import yfinance as yf
-import pandas as pd
-import numpy as np
-import time
-import logging
-
-logging.basicConfig(level=logging.INFO)
 
 # Load symbols and set up batching
 us_stock_df = pd.read_csv('us_stock_symbols.csv')
@@ -29,7 +24,6 @@ all_stock_data = pd.DataFrame()
 
 for i in range(0, len(symbols), batch_size):
     batch_symbols = symbols[i:i + batch_size]
-    logging.info(f"Starting batch {i//batch_size + 1} for {len(batch_symbols)} symbols.")
     try:
         # Download batch
         batch_data = yf.download(batch_symbols, start=start_date, end=end_date, group_by='ticker', threads=True)
@@ -50,18 +44,12 @@ for i in range(0, len(symbols), batch_size):
     except Exception as e:
         logging.error(f"Failed to download batch {batch_symbols}: {e}")
         continue  # Skip to the next batch on failure
-    
-    # Optional: Delay to reduce rate limit risk
-    time.sleep(5)
 
 # Save the final results to CSV
 all_stock_data.to_csv('daily_log_returns_yfinance.csv', index=False)
 
-import pandas as pd
 
-# Assuming `all_stock_data` contains columns ['Symbol', 'Date', 'LogReturn']
-# Calculate summary statistics for each stock
-
+#Separate aggregated dataset.
 # Step 1: Group by stock symbol and calculate summary statistics
 aggregated_stats = all_stock_data.groupby('Symbol')['LogReturn'].agg(
     MeanLogReturn='mean', 
