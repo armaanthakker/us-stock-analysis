@@ -49,7 +49,7 @@ To explore the time-varying nature of returns and volatility, I used a 20-day ro
 
 The mean fluctuates around zero, consistent with the expectation that average stock returns are zero over short intervals. Rolling Standard Deviation: This measure, also known as rolling volatility, reflects periods of increased market activity and investor uncertainty. For instance, spikes in volatility suggest periods where stocks experienced rapid price fluctuations.
 
-The rolling volatility plot indicates clusters of high and low volatility, a common phenomenon in financial markets often described as "volatility clustering." This effect suggests that large changes in returns are likely to be followed by more large changes, and small changes by more small changes.
+The rolling volatility plot indicates clusters of high and low volatility, a common phenomenon in financial markets often described as "volatility clustering." This effect suggests that large changes in returns are likely to be followed by more large changes, and small changes by more small changes. This is actually better discussed in Figure 4.
 
 ### 3. Day-of-Week Effect<br />
 
@@ -65,7 +65,8 @@ The "day-of-the-week effect" is a well-documented anomaly in financial literatur
 <img width="732" alt="Screenshot 2024-10-28 at 8 57 24 AM" src="https://github.com/user-attachments/assets/ecbc2d77-3ba9-4903-a7d1-2b5b9a8cb256"><br /><br />
 I calculated the average 30-day rolling standard deviation across all stocks to analyze overall market volatility trends (Figure 4). This plot offers insights into periods of heightened or reduced market volatility, which could correspond to macroeconomic events or shifts in investor sentiment.
 
-The 30-day average rolling volatility curve shows periods of increased volatility that likely align with significant market events. Higher rolling volatility signals periods of uncertainty or market stress, while lower volatility periods suggest stability.
+The rolling volatility plot indicates clusters of high and low volatility, a common phenomenon in financial markets often described as "volatility clustering." This effect suggests that large changes in returns are likely to be followed by more large changes, and small changes by more small changes.
 
-Conclusion
+## Conclusion
+
 In short, this project gave a closer look at U.S. stock behavior, from spotting volatility waves to seeing a mid-week boost in returns. By sampling and using batch processing, I could make sense of a huge dataset without losing key trends in the noise. While the results align with known market patterns, this deep dive highlighted both the challenges and rewards of working with real-world financial data on a big scale.
