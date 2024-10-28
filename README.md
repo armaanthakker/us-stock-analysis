@@ -34,7 +34,7 @@ The correlation matrix provides insights into how different summary statistics a
 
 Mean Log Return and Volatility: A low or negative correlation suggests that stocks with high average returns do not necessarily exhibit higher volatility, indicating that high returns can be achieved without excessive risk. Minimum and Maximum Returns: The strong positive correlation between minimum and maximum returns reflects that stocks with extreme high values also tend to have extreme low values, signifying volatility. Additional Things: The negative correlation between standard deviation and minimum returns suggests that more volatile stocks tend to experience lower minimum returns, underlining the downside risk associated with volatility. Overall, this matrix gives an understanding of how volatility, returns, and risk measures interact within the dataset.
 
-##Time Series Analysis
+## Time Series Analysis
 ### 1. Autocorrelation Analysis
 
 <img width="729" alt="Screenshot 2024-10-28 at 8 56 18 AM" src="https://github.com/user-attachments/assets/fa741160-f54d-4ff7-83e5-1fcbcefced46"><br /><br />
